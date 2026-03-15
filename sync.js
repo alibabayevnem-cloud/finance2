@@ -6,7 +6,7 @@
  * Bütün məntiq InputPad.html içindədir.
  */
 
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxyOuDSryH3AEH63cBZ95WyXx1vcCzFcNn1WrstOPgeM7sumNVz5mt8xGCWBkyGbL-9Zw/exec';
+const APPS_SCRIPT_URL = 'BURAYA_WEB_APP_URL_GELECEK';
 
 window.FireSync = window.SBSync = window.GistSync = {
   APPS_SCRIPT_URL,

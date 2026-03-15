@@ -46,30 +46,7 @@ body{background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Se
 .submit-btn.expense{background:#e53e3e;box-shadow:0 4px 18px rgba(229,62,62,.35);}
 #statusMessage{text-align:center;padding:6px 0 4px;font-size:13px;font-weight:600;min-height:22px;color:#28a745;}
 #statusMessage.err{color:#e53e3e;}
-.nav-fab{position:fixed;bottom:24px;right:20px;width:54px;height:54px;background:#6366f1;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;cursor:pointer;z-index:9000;box-shadow:0 4px 20px rgba(99,102,241,.55);border:none;color:#fff;transition:transform .15s;}
-.nav-fab:active{transform:scale(.91);}
-.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9001;display:none;backdrop-filter:blur(4px);}
-.nav-overlay.open{display:block;}
-.nav-drawer{position:fixed;bottom:-100%;left:0;right:0;background:#1a1d27;border-radius:20px 20px 0 0;z-index:9002;padding:20px 20px 40px;transition:bottom .38s cubic-bezier(0.175,.885,.32,1.08);box-shadow:0 -4px 40px rgba(0,0,0,.5);}
-.nav-drawer.open{bottom:0;}
-.nav-handle{width:36px;height:4px;background:rgba(255,255,255,.2);border-radius:2px;margin:0 auto 18px;}
-.nav-title{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:14px;padding-left:4px;}
-.nav-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.nav-item{display:flex;align-items:center;gap:12px;padding:13px 15px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);cursor:pointer;text-decoration:none;transition:background .15s;color:#fff;}
-.nav-item:hover{background:rgba(255,255,255,.13);}
-.nav-item.active-nav{background:rgba(99,102,241,.22);border-color:rgba(99,102,241,.55);}
-.nav-icon{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
-.nav-icon.purple{background:rgba(99,102,241,.25);}
-.nav-icon.blue{background:rgba(37,99,235,.25);}
-.nav-icon.green{background:rgba(16,185,129,.25);}
-.nav-icon.amber{background:rgba(245,158,11,.25);}
-.nav-icon.red{background:rgba(239,68,68,.25);}
-.nav-icon.teal{background:rgba(20,184,166,.25);}
-.nav-icon.gray{background:rgba(139,148,158,.25);}
-.nav-text-wrap{display:flex;flex-direction:column;gap:2px;}
-.nav-label{font-size:13px;font-weight:700;color:#fff;}
-.nav-desc{font-size:11px;color:rgba(255,255,255,.45);}
-@media(max-width:400px){.nav-grid{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
@@ -103,10 +80,6 @@ body{background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Se
   <div id="statusMessage"></div>
 </div>
 
-<button class="nav-fab" onclick="navOpen()">☰</button>
-<div class="nav-overlay" id="navOverlay" onclick="navClose()"></div>
-<div class="nav-drawer" id="navDrawer">
-  <div class="nav-handle"></div>
   <div class="nav-title">Naviqasiya</div>
   <div class="nav-grid">
     <a class="nav-item" href="index.html"><div class="nav-icon red">🏠</div><div class="nav-text-wrap"><span class="nav-label">Ana Səhifə</span><span class="nav-desc">Balans & modullar</span></div></a>
@@ -274,9 +247,6 @@ document.addEventListener('DOMContentLoaded', init);
 window.addEventListener('gist-ready', init, { once: true });
 window.addEventListener('storage', e => { if (e.key==='kreditler_v2') setOperation(op); if (e.key==='mf_cats') setOperation(op); });
 
-function navOpen(){document.getElementById('navDrawer').classList.add('open');document.getElementById('navOverlay').classList.add('open');}
-function navClose(){document.getElementById('navDrawer').classList.remove('open');document.getElementById('navOverlay').classList.remove('open');}
-document.addEventListener('keydown', e => { if(e.key==='Escape') navClose(); });
 </script>
 </body>
 </html>
